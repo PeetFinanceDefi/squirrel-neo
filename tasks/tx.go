@@ -137,7 +137,8 @@ func handleTx(txChan <-chan txInfo) {
 
 		err := db.ApplyVinsVouts(tx, vins, vouts)
 		if err != nil {
-			panic(err)
+			continue
+			// panic(err)
 		}
 
 		showTxProgress(tx.ID)
