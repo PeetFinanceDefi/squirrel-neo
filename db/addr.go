@@ -33,9 +33,7 @@ func GetAddrAssetInfo() []*addr.AssetInfo {
 			&balanceStr,
 		)
 
-		if err != nil {
-			panic(err)
-		}
+		if err != nil { continue; }
 
 		m.Balance = util.StrToBigFloat(balanceStr)
 
